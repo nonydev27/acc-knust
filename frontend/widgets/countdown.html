@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACC KNUST Countdown</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            padding:30px;
+        }
+
+        .card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    width:320px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+h2{
+    color:#0077cc;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(to right, #74ebd5, #ACB6E5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+a{
+    text-decoration:none;
+    color:#0077cc;
+    font-weight:bold;
+}        }
+
+        #countdown{
+            font-size:24px;
+            font-weight:bold;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>ACC KNUST Meeting</h2>
+    <p>Countdown to next meeting</p>
+    <div id="countdown"></div>
+</div>
+
+<script>
+const targetDate = new Date("December 31, 2026 16:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance/(1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    document.getElementById("countdown").innerHTML =
+        days + " Days " + hours + " Hours";
+},1000);
+</script>
+
+</body>
+</html>
