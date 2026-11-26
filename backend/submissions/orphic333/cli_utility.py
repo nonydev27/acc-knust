@@ -6,5 +6,5 @@ data = {
     'status': "ACC Backend Ready"
 }   
 
-with open("data.json", mode='w') as f:
-    json.dump(data, f, indent=4)
+if __name__ == "__main__":
+    print(json.dumps(data, indent=4))
