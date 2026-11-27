@@ -15,4 +15,12 @@ app.get('/', (req, res) => {
   });
 });
 
+app.post('/register', (req, res) => {
+  const { name, email } = req.body;
+  if (!name?.trim() || !email?.trim()) {
+    return res.status(400).json({ error: 'name and email are required' });
+  }
+  res.status(201).json({ message: 'Registered', name, email });
+});
+
 app.listen(PORT, () => console.log(`Running on port ${PORT}`));
