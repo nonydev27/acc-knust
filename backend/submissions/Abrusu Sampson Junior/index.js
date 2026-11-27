@@ -1,5 +1,9 @@
+import 'dotenv/config';
 import express from 'express';
 const app = express();
+
+const PORT = process.env.PORT ?? 3000;
+const SECRET = process.env.CLUB_SECRET_KEY;
 
 app.use(express.json());
 
@@ -11,4 +15,4 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log(`Running on port 3000`));
+app.listen(PORT, () => console.log(`Running on port ${PORT}`));
