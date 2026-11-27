@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Event Countown &amp; Schedule Widget - ACC KNUST</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main class="widget" data-theme="light">
+			<header class="widget-header">
+				<div>
+					<span class="badge">ACC KNUST | Frontend Track</span>
+					<h1 class="widget-title">Next Club Session</h1>
+				</div>
+				<button
+					type="button"
+					id="themeToggle"
+					class="theme-button"
+					aria-label="Toggle dark or light mode">
+					Dark Mode
+				</button>
+			</header>
+
+			<section class="session-selector" aria-label="Upcoming sessions">
+				<button type="button" class="session-tab is-active" data-session="0">
+					Frontend Lab
+				</button>
+				<button type="button" class="session-tab" data-session="1">
+					Git &amp; PR Clinic
+				</button>
+				<button type="button" class="session-tab" data-session="2">
+					Demo Day
+				</button>
+			</section>
+
+			<section class="session-info">
+				<h2 id="sessionName" class="session-name"></h2>
+				<p id="sessionMeta" class="sesion-meta"></p>
+			</section>
+
+			<section class="countdown" aria-live="polite">
+				<div class="time-box">
+					<span id="days" class="time-value">00</span>
+					<span class="time-label">Days</span>
+				</div>
+				<div class="time-box">
+					<span id="hours" class="time-value">00</span>
+					<span class="time-label">Hours</span>
+				</div>
+				<div class="time-box">
+					<span id="minutes" class="time-value">00</span>
+					<span class="time-label">Mins</span>
+				</div>
+				<div class="time-box">
+					<span id="seconds" class="time-value">00</span>
+					<span class="time-label">Secs</span>
+				</div>
+			</section>
+
+			<footer class="widget-footer">
+				<center>
+					<span id="statusText">Countdown Active</span>
+				</center>
+			</footer>
+		</main>
+		<script src="widget.js"></script>
+	</body>
+</html>
