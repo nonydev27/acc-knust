@@ -22,7 +22,21 @@ data = {
     'port': port,
     'secret_key_loaded': bool(secret_key)
 }   
+def member_registration(member_data):
+    name = member_data.get("name",  "").strip()
+    email = member_data.get("email", "").strip()
 
+    if not name or not email:
+        return {"status": "error",
+                "message": "Both name and email are required."}
+
+    return {"status": "success",
+            "message": f"Member {name} with email {email} registered successfully.",
+            "data": {
+                "name": name,
+                "email": email
+            }}
 if __name__ == "__main__":
     print(json.dumps(data, indent=4))
+
 
