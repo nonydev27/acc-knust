@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACC KNUST • Frontend Member Directory</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #ea580c;
+      --accent-soft: #fff7ed;
+      --border: #e2e8f0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .site-header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      background-color: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .intro h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .intro p {
+      color: var(--muted);
+    }
+
+    .directory-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .directory-item a {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1.15rem 1.25rem;
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .directory-item a:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .member-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .member-handle {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Frontend track navigation">
+      <a class="brand" href="directory.html">ACC <span>KNUST</span> • Frontend</a>
+      <ul class="nav-links">
+        <li><a href="directory.html" aria-current="page">Directory</a></li>
+        <li><a href="cards/rolandkoranteng.html">Roland Koranteng</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>Frontend Track Member Directory</h1>
+      <p>Browse profile cards built by AmaliTech Coding Club (ACC) KNUST frontend members.</p>
+    </section>
+
+    <ul class="directory-list" aria-label="Frontend member profile links">
+      <li class="directory-item">
+        <a href="cards/rolandkoranteng.html">
+          <span class="member-title">Roland Nana Osei Koranteng</span>
+          <span class="member-handle">@rolandkoranteng • View Profile Card →</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
