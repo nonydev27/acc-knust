@@ -4,6 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roland Nana Osei Koranteng | ACC KNUST Profile Card</title>
+  <style>
+    :root {
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --accent: #ea580c;
+      --accent-hover: #c2410c;
+      --accent-soft: #fff7ed;
+      --border: #e2e8f0;
+      --shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.14);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(249, 115, 22, 0.12), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(15, 23, 42, 0.06), transparent 45%),
+        var(--bg-page);
+      color: var(--text-primary);
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 50px -16px rgba(15, 23, 42, 0.2);
+    }
+
+    .card-header {
+      padding: 2rem 1.75rem 1.25rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--accent-soft) 0%, #ffffff 72%);
+    }
+
+    .club-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: #ffffff;
+      border: 1px solid rgba(234, 88, 12, 0.25);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+
+    .avatar {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f97316, #c2410c);
+      color: #ffffff;
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(234, 88, 12, 0.28);
+    }
+
+    .member-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-primary);
+    }
+
+    .member-role {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .card-body {
+      padding: 1.5rem 1.75rem;
+    }
+
+    .member-bio {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .skill-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .card-footer {
+      padding: 0 1.75rem 1.75rem;
+    }
+
+    .github-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      background: var(--text-primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .github-link:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .github-link:focus-visible {
+      outline: 3px solid rgba(234, 88, 12, 0.45);
+      outline-offset: 2px;
+    }
+
+    .github-handle {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 1rem;
+      }
+
+      .card-header,
+      .card-body {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .card-footer {
+        padding: 0 1.25rem 1.35rem;
+      }
+
+      .member-name {
+        font-size: 1.2rem;
+      }
+
+      .github-link {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="page">
