@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACC KNUST • Session Countdown &amp; Schedule Widget</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="widget-shell">
+    <section class="widget-card" aria-labelledby="widget-title">
+      <header class="widget-header">
+        <div>
+          <span class="eyebrow">AmaliTech Coding Club • KNUST</span>
+          <h1 id="widget-title">Meeting Countdown &amp; Schedule</h1>
+        </div>
+
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-pressed="false"
+          aria-label="Toggle dark mode"
+        >
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+      </header>
+
+      <section class="countdown-panel" aria-live="polite">
+        <div class="active-session-meta">
+          <span id="active-track" class="track-pill">Frontend Track</span>
+          <span id="active-venue" class="venue-text">KNUST Engineering Auditorium</span>
+        </div>
+
+        <h2 id="active-session-title" class="active-session-title">Loading next session...</h2>
+        <p id="active-session-date" class="active-session-date"></p>
+
+        <div class="countdown-grid" role="timer" aria-label="Time remaining until selected session">
+          <div class="time-box">
+            <span id="days" class="time-value">00</span>
+            <span class="time-unit">Days</span>
+          </div>
+          <div class="time-box">
+            <span id="hours" class="time-value">00</span>
+            <span class="time-unit">Hours</span>
+          </div>
+          <div class="time-box">
+            <span id="minutes" class="time-value">00</span>
+            <span class="time-unit">Mins</span>
+          </div>
+          <div class="time-box">
+            <span id="seconds" class="time-value">00</span>
+            <span class="time-unit">Secs</span>
+          </div>
+        </div>
+
+        <div class="countdown-actions">
+          <button type="button" id="rsvp-btn" class="primary-btn">
+            Mark as Attending
+          </button>
+          <span id="rsvp-status" class="rsvp-status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="schedule-section" aria-labelledby="schedule-heading">
+        <div class="schedule-toolbar">
+          <h2 id="schedule-heading">Upcoming Club Sessions</h2>
+          <div class="filter-group" role="group" aria-label="Filter sessions by track">
+            <button type="button" class="filter-btn is-active" data-filter="All">All</button>
+            <button type="button" class="filter-btn" data-filter="Frontend">Frontend</button>
+            <button type="button" class="filter-btn" data-filter="General">General</button>
+          </div>
+        </div>
+
+        <ul id="session-list" class="session-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
