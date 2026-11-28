@@ -1,6 +1,14 @@
+const fs = require('node:fs');
 const http = require('node:http');
+const path = require('node:path');
 
-const PORT = 3000;
+const envPath = path.join(__dirname, '.env');
+if (fs.existsSync(envPath) && typeof process.loadEnvFile === 'function') {
+  process.loadEnvFile(envPath);
+}
+
+const PORT = Number(process.env.PORT) || 3000;
+const CLUB_SECRET_KEY = process.env.CLUB_SECRET_KEY || '';
 
 const server = http.createServer((req, res) => {
   if (req.method === 'GET' && req.url === '/') {
@@ -11,6 +19,8 @@ const server = http.createServer((req, res) => {
         index: '6182324',
         year: 'Level 300',
         status: 'ACC Backend Ready',
+        port: PORT,
+        secretConfigured: Boolean(CLUB_SECRET_KEY),
       })
     );
     return;
