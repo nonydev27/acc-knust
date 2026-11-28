@@ -29,3 +29,9 @@ git commit -m "message"
 ```bash
 git push
 ```
+
+## 6. `git checkout -b`
+**Creates** a new branch and switches to it.
+```bash
+git checkout -b <branch-name>
+```
