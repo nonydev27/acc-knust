@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: smart-acc-backend
+  config:
+    import: optional:file:.env[.properties]
+server:
+  port: ${PORT:8080}
+club:
+  secret-key: ${CLUB_SECRET_KEY}
