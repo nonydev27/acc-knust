@@ -7,7 +7,17 @@ import java.nio.charset.StandardCharsets;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        String portValue = System.getenv("PORT");
+        int port = (portValue == null || portValue.isBlank())
+            ?8080
+            : Integer.parseInt(portValue);
+        
+        String clubSecretKey = System.getenv("CLUB_SECRET_KEY");
+        if (clubSecretKey == null || clubSecretKey.isBlank())
+            throw new IllegalStateException(
+                "Missing required environment variable: CLUB_SECRET_KEY");
+
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/", exchange -> {
             String json = """
@@ -27,6 +37,6 @@ public class Main {
         });
 
         server.start();
-        System.out.println("Server running at http://localhost:8080/");
+        System.out.println("Server running at http://localhost:"+ port +"/");
     }
 }
