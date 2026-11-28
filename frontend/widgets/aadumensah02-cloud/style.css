@@ -39,6 +39,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .theme-top h2 {
@@ -96,6 +98,25 @@ p {
 .club-button:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
+}
+
+@media (max-width: 35rem) {
+  body {
+    padding: 0.75rem;
+  }
+
+  article {
+    padding: 1rem;
+  }
+
+  .theme-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .theme-button {
+    width: 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
