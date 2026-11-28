@@ -64,3 +64,11 @@ It creates a new branch and switches to it
 ```bash
 git checkout -b new-branch-name
 ```
+
+
+### 6. `git diff`
+It shows exactly which lines you changed but have not staged yet
+
+```bash
+git diff
+```
