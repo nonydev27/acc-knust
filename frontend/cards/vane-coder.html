@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 90%;
+            max-width: 320px;
+            text-align: left;
+        }
+
+        .role {
+            color: #e8590c;
+            font-weight: bold;
+            margin: 0;
+        }
+
+
+
+        a {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header h2 {
+            margin: 0 0 4px;
+        }
+
+        .header .role {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="header">
+            <img class="avatar" src="me.jpg" alt="Vanessa Oware">
+            <div>
+                <h2>Vanessa Oware</h2>
+                <p class="role">Frontend developer</p>
+            </div>
+        </div>
+        <p class="bio">Computer Science student at KNUST learning frontend development, one commit at a time.</p>
+        <a href="https://github.com/vane-coder">GitHub Profile</a>
+    </div>
+</body>
+
+</html>
