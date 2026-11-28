@@ -38,6 +38,6 @@ function updateCountdown() {
     secondsElement.textContent = String(seconds).padStart(2, "0");
 }
 
-updateCountdown();
-
 const countdownInterval = setInterval(updateCountdown, 1000);
+
+updateCountdown();
