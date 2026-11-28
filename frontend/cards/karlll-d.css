@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("./portfolio2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.profile-card {
+  background: rgba(82, 94, 121, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+}
+
+.github-link {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.github-link:hover {
+  background: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+}
