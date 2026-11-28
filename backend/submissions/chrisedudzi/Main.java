@@ -14,20 +14,35 @@ public class Main {
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/", exchange -> {
-            String json = "{"
-                + "\"name\": \"Chris Edudzi Adabla\", "
-                + "\"year\": \"Year 2\", "
-                + "\"status\": \"ACC Backend Ready\", "
-                + "\"port\": " + port + ", "
-                + "\"secretConfigured\": " + secretConfigured
-                + "}";
-
-            byte[] response = json.getBytes(StandardCharsets.UTF_8);
+            String json = "{\"name\": \"Chris Edudzi Adabla\", \"year\": \"Year 2\", \"status\": \"ACC Backend Ready\", \"port\": " + port + ", \"secretConfigured\": " + secretConfigured + "}";
+            byte[] res = json.getBytes(StandardCharsets.UTF_8);
             exchange.getResponseHeaders().set("Content-Type", "application/json");
-            exchange.sendResponseHeaders(200, response.length);
-
+            exchange.sendResponseHeaders(200, res.length);
             try (OutputStream os = exchange.getResponseBody()) {
-                os.write(response);
+                os.write(res);
+            }
+        });
+
+        server.createContext("/register", exchange -> {
+            int status = 400;
+            String json = "{\"error\": \"Name and email are required\"}";
+
+            if ("POST".equals(exchange.getRequestMethod())) {
+                String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+                boolean validName = body.matches("(?s).*\"name\"\\s*:\\s*\"\\s*[^\"\\s].*");
+                boolean validEmail = body.matches("(?s).*\"email\"\\s*:\\s*\"\\s*[^\"\\s].*");
+
+                if (validName && validEmail) {
+                    status = 200;
+                    json = "{\"message\": \"Registration successful\"}";
+                }
+            }
+
+            byte[] res = json.getBytes(StandardCharsets.UTF_8);
+            exchange.getResponseHeaders().set("Content-Type", "application/json");
+            exchange.sendResponseHeaders(status, res.length);
+            try (OutputStream os = exchange.getResponseBody()) {
+                os.write(res);
             }
         });
 
