@@ -11,4 +11,5 @@ public class StatusResponse {
     private final String knustIndex;
     private final String year;
     private final String status;
+    private final boolean secretKeyConfigured;
 }
