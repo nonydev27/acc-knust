@@ -1,0 +1,9 @@
+{
+  "name": "acc-knust-backend-king-leo58148",
+  "version": "1.0.0",
+  "description": "ACC KNUST Backend Track submission for Sanyenni Louis Aparkwon",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
