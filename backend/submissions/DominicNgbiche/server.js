@@ -1,5 +1,9 @@
+require('dotenv').config();
 
 const http = require('http');
+
+const PORT = process.env.PORT;
+const CLUB_SECRET_KEY = process.env.CLUB_SECRET_KEY;
 
 const server = http.createServer((req, res) => {
 
@@ -16,6 +20,6 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify(response));
 });
 
-server.listen(3000, () => {
-    console.log("Server is running on port 3000");
+server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

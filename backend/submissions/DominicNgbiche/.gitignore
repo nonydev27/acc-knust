@@ -4,3 +4,6 @@ node_modules/
 # Build artifacts
 build/
 dist/
+
+#Environment variables and secrets
+.env
