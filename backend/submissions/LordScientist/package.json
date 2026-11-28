@@ -8,6 +8,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "dotenv": "^18.0.10",
     "express": "^5.1.0"
   }
 }
