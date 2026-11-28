@@ -26,3 +26,8 @@ git push
 ```
 git status
 ```
+
+**git checkout -b** - creates a new branch and switches to it
+```
+git checkout -b <branch-name>
+```
