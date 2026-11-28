@@ -5,4 +5,17 @@ const student = {
     status: "ACC Backend Ready"
 };
 
-console.log(JSON.stringify(student, null, 2));
+// Assignment 2: Read environment variables
+const port = Number(process.env.PORT || 3000);
+const clubSecretKey = process.env.CLUB_SECRET_KEY;
+
+const configuration = {
+    port: port,
+    clubSecretKeyConfigured: Boolean(clubSecretKey)
+};
+
+// Display the student information and configuration
+console.log(JSON.stringify({
+    student,
+    configuration
+}, null, 2));
