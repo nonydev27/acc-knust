@@ -19,3 +19,4 @@
 ## Endpoints
 
 - `GET /`: Returns member info, backend readiness status, active port, and whether `CLUB_SECRET_KEY` is configured.
+- `POST /register`: Validates JSON body (`name` and `email` must be non-empty) and returns `201` on success or `400` with validation errors.
