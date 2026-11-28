@@ -1,0 +1,25 @@
+# Dependencies (rebuilt by running "npm install")
+node_modules/
+
+# Python caches, in case i ever use Python here
+__pycache__/
+
+*.pyc
+
+#Build output
+dist/
+build/
+
+#Logs
+*.log
+
+#OS / editor junk
+.DS_Store
+.vscode/
+
+# Secrets: NEVER commit
+.env
+.env.*
+
+# ...but DO commit the safe template 
+!.env.example
