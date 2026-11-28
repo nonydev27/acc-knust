@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: 0.3s;
+}
+
+body.dark { background: #1a1a1a; color: #f5f5f5; }
+
+.widget {
+  padding: 24px;
+  border: 2px solid #e8590c;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 360px;
+}
+
+.widget h2 { margin: 0 0 12px; }
+
+#countdown {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #e8590c;
+  color: #fff;
+  cursor: pointer;
+}
