@@ -16,3 +16,10 @@ build/
 #OS / editor junk
 .DS_Store
 .vscode/
+
+# Secrets: NEVER commit
+.env
+.env.*
+
+# ...but DO commit the safe template 
+!.env.example

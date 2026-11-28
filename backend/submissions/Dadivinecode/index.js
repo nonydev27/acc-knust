@@ -1,20 +1,30 @@
+// Must be the FIRSST line: loads .env values into process.env
+require('dotenv').config();
+
 // Load Express, the library that handles web requests
 const express = require('express');
 
 // Create the application object
 const app = express();
 
-// A fixed port for now (Assignment 2 moves this to an env variable)
-const PORT = 3000;
+// Read from environment; fall back to 3000 if PORT  is missing
 
-// A route: when someone sends GET to "/", run this function.
-// req = incoming request, res = the response we send back.
+const PORT = process.env.PORT || 3000;
+const CLUB_SECRET_KEY = process.env.CLUB_SECRET_KEY;
+
+
+// Fail loudly if the secret is missing, so config problems show up early
+if (!CLUB_SECRET_KEY){
+  console.warn('Warning: CLUB_SECRET_KEY is not set. Check your .env file.');
+}
+
 app.get('/', (req, res) => {
   res.json({
     name: 'Basuglo Ray-Divine',
     knustIndex: '3131225',
     year: 'Year 2',
     status: 'ACC Backend Ready'
+    // NOTE: please we deliberately do NOT return the secret key in the response
   });
 });
 
